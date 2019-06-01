@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="lang">
+  <head>
+    <title data-vue-tag="true">CS Friday 1 - SQL Intro - mitchellgritts.com</title><meta data-vue-tag="true" charset="utf-8"/><meta data-vue-tag="true" name="generator" content="Gridsome v0.5.4"/><meta data-vue-tag="true" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta data-vue-tag="true" data-key="description" name="description" content="a wildlife ecology, data analysis, and programmer blog"/><meta data-vue-tag="true" data-key="format-detection" name="format-detection" content="telephone=no"/><meta data-vue-tag="true" name="description" content="Weekly computer science inspired tips for Instagram"/><link data-vue-tag="true" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.9bb7ffa.png"/><link data-vue-tag="true" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.9bb7ffa.png"/><link data-vue-tag="true" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.9bb7ffa.png"/><noscript data-vue-tag="true" ><style>.g-image--loading{display:none;}</style></noscript><link rel="preload" href="/assets/css/styles.d4bdc934.css" as="style"><link rel="preload" href="/assets/js/app.0372be56.js" as="script"><link rel="preload" href="/assets/css/3.styles.0639f3dd.css" as="style"><link rel="preload" href="/assets/js/component--post.de00e60c.js" as="script"><link rel="prefetch" href="/assets/js/component--404.ac5bb6c0.js"><link rel="prefetch" href="/assets/js/component--home.b1d73917.js"><link rel="prefetch" href="/assets/js/component--tag.fc1fa01c.js"><link rel="prefetch" href="/assets/js/page-query.eedb71fb.js"><link rel="stylesheet" href="/assets/css/styles.d4bdc934.css"><link rel="stylesheet" href="/assets/css/3.styles.0639f3dd.css">
+  </head>
+  <body data-vue-tag="">
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/" class="logo active"><span class="logo__text">
+    ← mitchellgritts.com
+  </span></a></div><div class="header__right"></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">
+      CS Friday 1 - SQL Intro
+    </h1><div class="post-meta">
+   Posted 31. May 2019.
+   <strong>2 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><p>Over the last several months I've posted random snippets of code on my <a href="https://instagram.com/_gritts_" target="_blank" rel="nofollow noopener noreferrer">Instagram page</a>(<a href="https://www.instagram.com/p/BuW8ernBb9C/" target="_blank" rel="nofollow noopener noreferrer">like this one for R</a>, <a href="https://www.instagram.com/p/Bh7u4SjF19G/" target="_blank" rel="nofollow noopener noreferrer">or this one for JavaScript</a>, <a href="https://www.instagram.com/p/BhzimtCFG-8/" target="_blank" rel="nofollow noopener noreferrer">or this one about first class functions</a>). I'm not sharing the actual snippets of code I'm working on, rather simplified versions that make the code easier to explain. It is a fun distraction from work to think about the best ways to describe some interesting concepts. I don't have many follows that are coders, but I do have a few. </p>
+<p>Sometimes it is impossible to summarize everything that needs to be explained in an Instagram post. So I've decided to include them here as well. Hopefully with more thorough explanations. </p>
+<h2 id="learn-sql"><a href="#learn-sql" aria-hidden="true"><span class="icon icon-link"></span></a>Learn SQL</h2>
+<p>I have a BS in Wildlife Ecology and Conservation. While I was in school I learned about data collection and statistics, but I never learned how to best manage that data. When I began working at NDOW I soon learned about SQL. It changed <em>everything</em>. SQL is by far one of my favorite languages to write. So, let's get started.</p>
+<p>We will create a simple database of researchers and their research. There will be two tables, one for details about each researcher, and the second for details of their different research interests.</p>
+<p>The best place to practice this code is on <a href="sqlfiddle.com">sqlfiddle.com</a>. Be sure to change the database engine to PostgreSQL 9.6.</p>
+<h2 id="create-a-table"><a href="#create-a-table" aria-hidden="true"><span class="icon icon-link"></span></a>Create a Table</h2>
+<p>First things first, create and populate the researcher table.</p>
+<pre class="language-sql"><span class="token comment">-- create researchers table</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> researchers <span class="token punctuation">(</span>
+  id <span class="token keyword">serial</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+  first_name <span class="token keyword">text</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  last_name <span class="token keyword">text</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  email <span class="token keyword">text</span> <span class="token keyword">UNIQUE</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- insert some researchers into our new table</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> researchers <span class="token punctuation">(</span>
+  first_name<span class="token punctuation">,</span> last_name<span class="token punctuation">,</span> email
+<span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span>
+  <span class="token punctuation">(</span><span class="token string">'Mitchell'</span><span class="token punctuation">,</span> <span class="token string">'Gritts'</span><span class="token punctuation">,</span> <span class="token string">'mgritts@email.com'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token string">'Nathan'</span><span class="token punctuation">,</span> <span class="token string">'Jackson'</span><span class="token punctuation">,</span> <span class="token string">'njackson@email.com'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token string">'Miranda'</span><span class="token punctuation">,</span> <span class="token string">'Crowell'</span><span class="token punctuation">,</span> <span class="token string">'mcrowell@email.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+<p>The <code class="language-text">CREATE TABLE</code> command will create a new table, the general pattern is as follows, <code class="language-text">CREATE TABLE table name (table columns);</code> Each column is listed in the following pattern <code class="language-text">name type constraints</code>. Note, each SQL statement must end with a semi-colon (;).</p>
+<p>Once the table is created, populate it with the <code class="language-text">INSERT INTO</code> command. Here I'm specifying which columns in the researcher table I want to insert data into. Then specifying the values to be inserted. In this case three researchers.</p>
+<h2 id="query-a-table"><a href="#query-a-table" aria-hidden="true"><span class="icon icon-link"></span></a>Query a Table</h2>
+<p>This simple example doesn't show the full power of SQL, but you'll get an idea of how SQL works.</p>
+<pre class="language-sql"><span class="token keyword">SELECT</span> 
+  first_name<span class="token punctuation">,</span>
+  last_name
+<span class="token keyword">FROM</span> 
+  researchers
+<span class="token keyword">WHERE</span> first_name <span class="token operator">=</span> <span class="token string">'Gritts'</span><span class="token punctuation">;</span></pre>
+<p>The general pattern for a query is <code class="language-text">SELECT columns FROM table name WHERE criteria</code>. It all kinda makes sense, even without knowing much about SQL: select first name and last name from the researchers table where the first name is Gritts. It's almost a complete sentence. Of course it does get more powerful from there!</p>
+<h2 id="relationships"><a href="#relationships" aria-hidden="true"><span class="icon icon-link"></span></a>Relationships</h2>
+<p>Relationships are the real power behind SQL databases. They allow us to create tables of related data without the need to duplicate data. Avoiding duplicate data in this way is called data normalization. That is beyond the scope of this post. Below let's create another table that will hold project data for the researchers in the researcher table.</p>
+<pre class="language-sql"><span class="token comment">-- create projects table</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> projects <span class="token punctuation">(</span>
+  id <span class="token keyword">serial</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+  project_name <span class="token keyword">text</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+  project_description <span class="token keyword">text</span><span class="token punctuation">,</span>
+  project_start_date <span class="token keyword">date</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- insert data into projects table</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> projects <span class="token punctuation">(</span>
+  project_name<span class="token punctuation">,</span> project_description<span class="token punctuation">,</span> project_start_date
+<span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span></pre>
+</div><div class="post__footer"><div class="post-tags"><a href="/tag/cs-friday" class="post-tags__link"><span>#</span> cs friday
+		</a><a href="/tag/sql" class="post-tags__link"><span>#</span> sql
+		</a></div></div></div><div class="post-comments"></div></main><footer class="footer"><span><a href="https://github.com/kissmygritts">GitHub</a></span> :: uncopyright &amp; unlicense
+  </footer></div>
+    <script src="/assets/js/app.0372be56.js" defer></script><script src="/assets/js/component--post.de00e60c.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="lang">
+  <head>
+    <title data-vue-tag="true">Hello, world! - mitchellgritts.com</title><meta data-vue-tag="true" charset="utf-8"/><meta data-vue-tag="true" name="generator" content="Gridsome v0.5.4"/><meta data-vue-tag="true" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta data-vue-tag="true" data-key="description" name="description" content="a wildlife ecology, data analysis, and programmer blog"/><meta data-vue-tag="true" data-key="format-detection" name="format-detection" content="telephone=no"/><link data-vue-tag="true" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.9bb7ffa.png"/><link data-vue-tag="true" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.9bb7ffa.png"/><link data-vue-tag="true" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.9bb7ffa.png"/><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.9bb7ffa.png"/><noscript data-vue-tag="true" ><style>.g-image--loading{display:none;}</style></noscript><link rel="preload" href="/assets/css/styles.d4bdc934.css" as="style"><link rel="preload" href="/assets/js/app.0372be56.js" as="script"><link rel="preload" href="/assets/css/4.styles.fb980edc.css" as="style"><link rel="preload" href="/assets/js/component--tag.fc1fa01c.js" as="script"><link rel="prefetch" href="/assets/js/component--404.ac5bb6c0.js"><link rel="prefetch" href="/assets/js/component--home.b1d73917.js"><link rel="prefetch" href="/assets/js/component--post.de00e60c.js"><link rel="prefetch" href="/assets/js/page-query.eedb71fb.js"><link rel="stylesheet" href="/assets/css/styles.d4bdc934.css"><link rel="stylesheet" href="/assets/css/4.styles.fb980edc.css">
+  </head>
+  <body data-vue-tag="">
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/" class="logo active"><span class="logo__text">
+    ← mitchellgritts.com
+  </span></a></div><div class="header__right"></div></header><main class="main"><h1 class="tag-title text-center space-bottom">
+    # movement ecology
+  </h1><div class="posts"><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Minimum Convex Polygons</h2><p class="post-card__description">Calculating minimum convex polygons</p><div class="post-meta post-card__meta">
+   Posted 2. April 2018.
+   <strong>8 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/minimum-convex-polygons" class="post-card__link">Link</a></div></div></div></main><footer class="footer"><span><a href="https://github.com/kissmygritts">GitHub</a></span> :: uncopyright &amp; unlicense
+  </footer></div>
+    <script src="/assets/js/app.0372be56.js" defer></script><script src="/assets/js/component--tag.fc1fa01c.js" defer></script>
+  </body>
+</html>
