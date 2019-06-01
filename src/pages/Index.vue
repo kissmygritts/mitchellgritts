@@ -16,7 +16,7 @@
 {
   posts: allPost (
     sortBy: "date",
-    order: ASC,
+    order: DESC,
     filter: { published:{ eq: true }}
   ) {
     edges {
