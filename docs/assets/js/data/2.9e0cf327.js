@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{256:function(e){e.exports={data:{posts:{edges:[{node:{id:"edf4ad6a1eaa832905f3e7db11b84459",title:"Minimum Convex Polygons",path:"/minimum-convex-polygons",date:"2018-04-02"}},{node:{id:"58b359133e3e73b8a1b3eb64659b5ac7",title:"CS Friday 0 - How I Update R",path:"/cs-friday-0-how-i-update-r",date:"2019-05-31"}}]}}}}}]);
