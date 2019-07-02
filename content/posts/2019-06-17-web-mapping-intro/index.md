@@ -96,7 +96,7 @@ In future posts we will need to load data onto the map from local files. The bes
     └── index.html
 ```
 
-Now run this command to launch an HTTP server, `python -m simpleHTTPserver 9000`. I want the server to run on port 9000, which is what the 9000 means in the command. Now, if you navigate to the URL `http://localhost:9000/leaflet-intro` you'll see the map as if we opened the `index.html` in our browser. The server autmatically renders the file `index.html`.
+Now run this command to launch an HTTP server, `python -m SimpleHTTPServer 9000`. I want the server to run on port 9000, which is what the 9000 means in the command. Now, if you navigate to the URL `http://localhost:9000/leaflet-intro` you'll see the map as if we opened the `index.html` in our browser. The server autmatically renders the file `index.html`.
 
 Let's say we create a second HTML file, `imagery.html`, we can navigate with the following URL, `https://localhost:9000/leaflet-intro/imagery.html`. The general pattern here is everything after the 9000 in the URL is either a folder or file. If it is a folder with an `index.html` that html file will be rendered by default (like `http://localhost:9000/leaflet-intro`). If there is another file you want to use (html or other extension) you'll need to use the extension. 
 

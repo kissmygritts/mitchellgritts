@@ -95,7 +95,7 @@ This is a bit different from the last post. Let's walk through it a bit.
 
 The GeoJSON methods for leaflet parse GeoJSON data and display it on a map. There are several method and options for GeoJSON objects, see the [full documentation for more details](https://leafletjs.com/reference-1.5.0.html#geojson). 
 
-Save the file and make sure your http server is running, then Navigate to `http://localhost:9000`. Since we named our HTML file `index.html` the file server know to render that page. The map and the polygons should render, and look like the image below. Moving forward, anytime we make changes to the `index.html` file refresh you browser to see the changes.
+Save the file and make sure your http server is running (start it with `python -m SimpleHTTPServer 9000`), then Navigate to `http://localhost:9000/leaflet-geojson`. Since we named our HTML file `index.html` the file server know to render that page. The map and the polygons should render, and look like the image below. Moving forward, anytime we make changes to the `index.html` file refresh you browser to see the changes.
 
 ![leaflet with polygons](./leaflet-with-polygons.png)
 
@@ -204,3 +204,9 @@ This was a simple experiment, on my part, to get GeoJSON polygons on a map, styl
 3. Have multiple GeoJSON features overlap.
 
 All of this in future posts!
+
+## Updates
+
+### 2019-0702
+
+I've worked on getting this example working in [Mapbox GL JS](mapbox.com). The Mapbox library has a lot of interesting use cases, however I found it pretty difficult to work with. The performance also seemed very slow. But, that is probably my computer (8 year old MacBook Pro). Anyway you can find the mapbox folder in the Repo. I've removed my `mapbox.accessToken`. You'll need to add your own, or you will get an error when attempting to render a map. 
