@@ -9,6 +9,12 @@ description: 'Steps to update to the newest versions of R and RStudio'
 
 TLDR; Install and/or Update R and R Studio on your computer
 
+## CS Fridays?
+
+Over the last several months I've posted random snippets of code on my [Instagram page](https://instagram.com/_gritts_)([like this one for R](https://www.instagram.com/p/BuW8ernBb9C/), [or this one for JavaScript](https://www.instagram.com/p/Bh7u4SjF19G/), [or this one about first class functions](https://www.instagram.com/p/BhzimtCFG-8/)). I'm not sharing the actual snippets of code I'm working on, rather simplified versions that make the code easier to explain. It is a fun distraction from work to think about the best ways to describe some interesting concepts. I don't have many follows that are coders, but I do have a few. 
+
+Sometimes it is impossible to summarize everything that needs to be explained in an Instagram post. So I've decided to include them here as well. Hopefully with more thorough explanations.
+
 ## Update R
 
 The overall release schedule for R is to release updates every year in the spring, with patches issued as needed. You can plan on updating R at least once a year. However, updating R isn't always easy. These are the steps I follow in to update R on my machine. It might not be the best, but it works for me. 
