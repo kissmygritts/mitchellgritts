@@ -7,7 +7,7 @@ canonical_url: false
 description: 'A complete guide to vectors in R'
 ---
 
-Yesterday was my 4th time helping with an R Bootcamp. The bootcamp is two days. The first day consists of the very basics of R, data structures, reading data into R, then simple exploratory data analysis. We generally spend most of day one drilling the basic data structures in R, vectors, matrices, lists, etc. In this post I tried to compile as complete a guide as I can on R vectors.
+This weekend was my 4th time helping with an R Bootcamp. The bootcamp is two days. The first day consists of the very basics of R, data structures, reading data into R, then simple exploratory data analysis. We generally spend most of day one drilling the basic data structures in R - vectors, matrices, lists, etc. In this post I tried to compile as complete a guide as I can on R vectors.
 
 Let's get started.
 
@@ -69,7 +69,7 @@ typeof(vector_5)
 
 In `vector_5`, `1L` and `4L` are coerced from integers to doubles (floating point numbers). This example is a little more complex because it is possible to convert a double into an integer, however you'll lose data. The safer operation is to convert an integer into a double.
 
-This property of vectors is really important to understand. And while it may seem like a constraint, it is a very useful property. Since we know that a vector contains a set of data of the same type, we can safetly perform data operation on that vector. 
+This property of vectors is really important to understand. And while it may seem like a constraint, it is a very useful property. Since we know that a vector contains a set of data of the same type, we can safely perform data operation on that vector. 
 
 ### Vector properties
 
@@ -132,7 +132,7 @@ vector_1 + c(10, 20)
 #> [1] 11 22 13
 ```
 
-R still returns a result, but maybe not the result you were expecting. R will also warn you if the vectors are of different lengths. The warning can be a little cryptic; `longer object length is not a multiple of shorter object length` which essentially means the vectors are of different lengths. However, if the length of the vectors are multiples of eachother, then R will not throw this warning.
+R still returns a result, but maybe not the result you were expecting. R will also warn you if the vectors are of different lengths. The warning can be a little cryptic; `longer object length is not a multiple of shorter object length` which essentially means the vectors are of different lengths. However, if the length of the vectors are multiples of each other, then R will not throw this warning.
 
 ```r
 c(1, 2, 3, 4) + c(10, 20)
@@ -145,7 +145,7 @@ c(1, 2, 3, 4) + c(10, 20, 30)
 
 ### Indexing
 
-Indexing is an operation that selects subsets of the data in a vector. This operation can be performed to return a single, or multiple elements of a vector. This operation is sometimes refered to as subsetting, as we are taking a subset of a larger set of data.
+Indexing is an operation that selects subsets of the data in a vector. This operation can be performed to return a single, or multiple elements of a vector. This operation is sometimes referred to as subsetting, as we are taking a subset of a larger set of data.
 
 An index is used to specify the location of an element in a set of data. All data structures in R have an index, so this concept will also apply to later R objects. For those of you coming from another language R indexes starts at 1.
 
@@ -305,7 +305,7 @@ x[indices]
 Hopefully you all were able to follow along. If not, don't worry. Work through it again, think about what is happening in each line of code. Read each line out loud and think about what the result of each line will be. Let's walk through each line now.
 
 1. In step one we are asking what values of `x` are greater than (`>`) 103. R checks each element in `x` and returns a logical vector of `TRUE`/`FALSE` values and assigns it to the variable `logical_vector`, which looks like this `FALSE FALSE FALSE TRUE TRUE TRUE`.
-2. `which()` is a function that returns the indices of a logical vector (`logical_vector`) that are `TRUE`. In this case, those are indices 4, 5, and 6. This is assigned to the variable `inices`.
+2. `which()` is a function that returns the indices of a logical vector (`logical_vector`) that are `TRUE`. In this case, those are indices 4, 5, and 6. This is assigned to the variable `indices`.
 3. Finally, we subset our original vector `x` by the indices specified in the variable `indices`, which are indices 4, 5, and 6. This returns the values in the vector that are over 103. 
 
 We don't need to include all these intermediate steps to get the same answer. One of the great things about R is there are many different ways to get the same answer, no single method is the correct method. There might be better methods, but not always a correct method. The code below returns the same answer with a single line of code. 
@@ -317,13 +317,54 @@ x[x > 103]
 
 This is possible because subsetting with the square brackets works with a logical vector where the length is equal to the original vector. So we can use the `logical_vector` variable from above to subset `x`. And the `logical_vector` variable contains the results of our initial boolean operation, `x > 103`. Therefore the code chunk above is a shorter, quicker way of achieving the same exact results. 
 
-In the code chunk below you can see that it is possilbe to subset a vector with a logical vector. Thus, making the `which()` function call unnecessary.
+In the code chunk below you can see that it is possible to subset a vector with a logical vector. Thus, making the `which()` function call unnecessary.
 
 ```r
 x[c(FALSE, FALSE, FALSE, TRUE, TRUE, TRUE)]
 #> [1] 104 105 106
 ```
 
-### Summary of vectors
+## Summary of vectors
 
-That is a lot of detail for such an aparently simple object. But now you have a thurough understanding of what vectors are and how to work with them. Understanding the other data structures in R will be easier since vectors are the building blocks of nearly all the other data structures in R. All the principles above will be rehashed again, and again in the following sections about matrices, lists, and data frames.
+That is a lot of detail for such an apparently simple object. But now you have a thorough understanding of what vectors are and how to work with them. Understanding the other data structures in R will be easier since vectors are the building blocks of nearly all the other data structures in R. All the principles above will be rehashed again, and again in the following sections about matrices, lists, and data frames.
+
+I probably likely missed a lot of details of vectors in this guide. If you can think of any please leave a comment so that I can add it to this guide. 
+
+I'm thinking of putting together another post about fun applications or tricks with vectors. If you can think of any, please leave a comment.
+
+Thanks for reading!
+
+## Cheat Sheet
+
+```r
+# create a vector
+c(2, 4, 6)
+2:6
+seq(2, 6, by = 2)
+rep(2:3, times = 3)
+rep(2:3, each = 3)
+
+# subset vectors
+x <- 11:15
+#> [1] 11 12 13 14 15
+
+## by element
+x[4]
+#> [1] 14
+
+x[-4]
+#> [1] 11 12 13 15
+
+x[1:2] 
+#> [1] 11 12
+
+x[c(1, 5)]
+#> [1] 11 15
+
+## by value
+x[x == 14]
+#> [1] 14
+
+x[x > 13]
+#> [1] 14 15
+```
