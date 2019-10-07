@@ -102,7 +102,7 @@ The `sp` package extends base plotting in R. This means that you can use `sp` ob
 plot(sp)
 ```
 
-![sp-default plots](sp-default.png)
+![sp-default plots](./sp-default.png)
 
 ### Subsetting
 
@@ -177,7 +177,7 @@ plot(pts_sf[0])
 plot(st_geometry(pts_sf))
 ```
 
-![sf default](sf-default.jpeg)
+![sf default](./sf-default.jpeg)
 
 ### Subsetting
 

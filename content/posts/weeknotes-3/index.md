@@ -45,4 +45,4 @@ This weekend a friend and I cooked pasta and ragu from scratch. The recipe from 
 
 The pasta was great!
 
-![pasta and ragu](pasta-ragu.jpg)
+![pasta and ragu](./pasta-ragu.jpg)
