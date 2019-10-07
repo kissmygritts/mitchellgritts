@@ -5,7 +5,7 @@
     
     <!-- List posts -->
     <section class="post-list">
-      <h2 class="post-list__title">Posts</h2>
+      <!-- <h2 class="post-list__title">Posts</h2> -->
       <PostListItem v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
     </section>
 
@@ -52,6 +52,7 @@ export default {
 .post-list {
   max-width: 860px;
   margin: 0 auto;
+  padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   background-color: #ffffff;
   border-radius: 5px;
