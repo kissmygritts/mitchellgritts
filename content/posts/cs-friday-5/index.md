@@ -1,6 +1,6 @@
 ---
 title: CS Weekly 5 - Simple Features in R
-date: 2019-10-12
+date: 2019-10-08
 published: true
 tags: ['cs friday', 'r', 'spatial']
 canonical_url: false
