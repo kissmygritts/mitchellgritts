@@ -1,5 +1,5 @@
 ---
-title: CS Friday 2 - SQL Intro
+title: CS Weekly 2 - SQL Intro
 date: 2019-08-30
 published: true
 tags: ['cs friday', 'sql']

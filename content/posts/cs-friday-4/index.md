@@ -1,5 +1,5 @@
 ---
-title: CS Friday 4 - Comparing sf and sp
+title: CS Weekly 4 - Comparing sf and sp
 date: 2019-10-04
 published: true
 tags: ['cs friday', 'r', 'spatial']

@@ -1,5 +1,5 @@
 ---
-title: CS Friday 1 - Visualize Color Palettes in R
+title: CS Weekly 1 - Visualize Color Palettes in R
 date: 2019-06-07
 published: true
 tags: ['cs friday', 'r', 'visualization']

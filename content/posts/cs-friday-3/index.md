@@ -1,5 +1,5 @@
 ---
-title: CS Friday 3 - SQL JSON dump
+title: CS Weekly 3 - SQL JSON dump
 date: 2019-09-06
 published: true
 tags: ['cs friday', 'sql']

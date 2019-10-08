@@ -1,5 +1,5 @@
 ---
-title: CS Friday 0 - How I Update R
+title: CS Weekly 0 - How I Update R
 date: 2019-05-31
 published: true
 tags: ['cs friday', 'r']
