@@ -2,7 +2,7 @@
 title: CS Weekly 7 - Simple, Correct, Fast
 date: 2019-10-22
 published: true
-tags: ['cs friday', 'programming', 'r']
+tags: ['cs weekly', 'programming', 'r']
 canonical_url: false
 description: 'Weekly computer science inspired tips for Instagram, #7'
 ---

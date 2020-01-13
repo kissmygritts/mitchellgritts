@@ -1,5 +1,6 @@
 <template>
   <div class="post-list-item">
+
     <div class="post-list-item__left">
       <g-link :to="post.path" class="post-list-item__link">
         <p class="post-list-item__title">{{ post.title }} </p>
@@ -8,6 +9,7 @@
     <div class="post-list-item__right">
       <p class="post-list-item__date">{{ post.date }} </p>
     </div>
+
   </div>
 </template>
 
