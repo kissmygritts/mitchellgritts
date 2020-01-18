@@ -1,6 +1,6 @@
 ---
-title: 'Plot with {sf} - Stacking Geometries'
-date: 2020-01-13
+title: 'Plot {sf} Objects'
+date: 2020-01-14
 published: true
 tags: ['sf', 'r', 'spatial']
 canonical_url: false
