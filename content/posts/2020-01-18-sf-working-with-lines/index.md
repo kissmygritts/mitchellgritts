@@ -37,7 +37,7 @@ plot(st_geometry(counties), border = 'white', col = NA, lwd = 3, add = T)
 ```
 <!-- TOOD: code to download and convert the data -->
 
-![nevada counties and features](nv-features-counties.jpeg)
+![nevada counties and features](./nv-features-counties.jpeg)
 
 *Note: unfortunately, the actual data that was requested is private. Instead, I'll use feature data from the [National Geographic Names Information System](https://www.usgs.gov/faqs/how-can-i-acquire-or-download-geographic-names-information-system-gnis-data?qt-news_science_products=0#qt-news_science_products) or GNIS. I dowloaded the data directly from [here](https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names/download-gnis-data). Data downloaded from the webiste is pipe delimited (`|`), make sure to use `delim = '|'` when loading any other data from this website into R.*
 
@@ -89,7 +89,7 @@ plot(st_geometry(wp_county))
 plot(st_geometry(hwy_93), col = 'purple', add = T)
 ```
 
-![hwy 93 in white pine county](hwy-93-wp-county.jpeg)
+![hwy 93 in white pine county](./hwy-93-wp-county.jpeg)
 
 You gotta be kidding me! Highway 93 isn't a single line? What is this gap between the two sections?
 
@@ -107,7 +107,7 @@ plot(st_geometry(hwy_93), col = 'purple', add = T)
 plot(st_geometry(hwy_50), col = 'orange', add = T)
 ```
 
-![hwy 50 and hwy 93 in white pine county](wp-roads.jpeg)
+![hwy 50 and hwy 93 in white pine county](./wp-roads.jpeg)
 
 ### Intersecting Hwy 50 & Hwy 93
 
@@ -142,7 +142,7 @@ points(x = intersection$X, y = intersection$Y,
        col = 'cornflowerblue', pch = 19, cex = 2, add = T)
 ```
 
-![road intersections](intersection-result.jpeg)
+![road intersections](./intersection-result.jpeg)
 
 I'm not sure why the result of the intersection has four points, two duplicate points. That is something I'll have to look into sometime. For now I'll convert the intersection to a `data.frame` then remove the duplicate points. 
 
@@ -173,7 +173,7 @@ points(x = hwy_50_segment$X, y = hwy_50_segment$Y,
        col = 'springgreen', pch = 20)
 ```
 
-![highway 50 segment](hwy-50-segment.jpeg)
+![highway 50 segment](./hwy-50-segment.jpeg)
 
 Since a line is just a list of coordinate pairs, I should be able to do the opposite to recombine them back into a line.
 
@@ -217,7 +217,7 @@ plot(st_geometry(wp_county))
 plot(st_geometry(hwy_93_merged), lwd = 2, col = 'purple', add = T)
 ```
 
-![highway 93 merged with highway 50](hwy-93-merged.jpeg)
+![highway 93 merged with highway 50](./hwy-93-merged.jpeg)
 
 `{sf}` is a very noisy package. So many errors and warnings are reported to the console. It's becomes tiresome after awhile. 
 
@@ -253,7 +253,7 @@ wp_split$id <- 1:nrow(wp_split)
 plot(wp_split['id'])
 ```
 
-![split white pine county](split-wp-county.jpeg)
+![split white pine county](./split-wp-county.jpeg)
 
 So many warnings!! But, with even more hacking, I have a polygon that defines easter White Pine county. It is really hard to tell, but there is a small gap between these polygons. Try running the code snippet and change the distance in the buffer function.
 
@@ -281,7 +281,7 @@ plot(st_geometry(aoi_union))
 plot(st_geometry(features_aoi), pch = 20, col = scales::alpha('purple', .1), add = T)
 ```
 
-![final result](final-result.jpeg)
+![final result](./final-result.jpeg)
 
 Yes! That's it!
 
@@ -294,3 +294,5 @@ For instance, I loaded up the road dataset from the `{tigris}` package in R. Whi
 Another quick way to get Highway 93 is to use a service like [CalTopo](caltopo.com). There is a really cool feature on this website that allows you draw lines on a map. As the lines are drawn they are snapped to a nearby feature. In this case, Highway 93. I could have done this, then exported the data as a GeoJSON and laoded it into R. 
 
 Regardless, I'm proud that I figured out how to complete this problem in R. I often find that people are suprised when I tell them I do all my GIS work in R. I eventually walk back that statement to, all GIS tasks but really detailed cartography is possible in R. And I will stick by this statement for a very long time. R's spatial abilities are only going to improve as packages like `{sf}` improve.
+
+If you have any thoughts or improvements you can create an [issue on the repo for site](https://github.com/kissmygritts/kissmygritts).
