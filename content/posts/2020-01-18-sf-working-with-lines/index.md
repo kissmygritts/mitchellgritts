@@ -17,8 +17,7 @@ Me: "...my bad. I'll get that to you shortly."
 
 Also me: *How the heck am I going to do this without opening ArcMap?*
 
-This is the story of how I spent several hours in R to avoid using an ESRI product. As you'll see, I can go to extreme measures to avoid ArcMap. Honestly, I can't really 
-remember why I dislike ESRI so much. It's become my thing. Lucky for me, R is always there to solve every spatial problem I come across.
+This is the story of how I spent several hours in R to avoid using an ESRI product. As you'll see, I can go to extreme measures to avoid ArcMap. I can't remember why I dislike ESRI so much. It's become my thing. Lucky for me, R is always there to solve every spatial problem I come across.
 
 ## Let's get going
 
@@ -287,12 +286,12 @@ Yes! That's it!
 
 ## Wrap up
 
-I knew I didn't need to use ArcMap to do this task. Completing this, entirely in R really made my day. Honestly, this isn't the most efficient way to get this task done. Off the top of my head I can think of a few ways to accomplish this much more quickly, and easily.
+I knew I didn't need to use ArcMap for this. This isn't the most efficient way to get complete this task. Off the top of my head I can think of a few other methods to accomplish the same results. Much more efficient methods too.
 
-For instance, I loaded up the road dataset from the `{tigris}` package in R. While selecting the proper Highway 93 is a little more difficult, it is a continuous line in White Pine county. I probably should have looked for better data to begin with.
+For instance, the road dataset from the `{tigris}` R package has more complete road data. Selecting Highway 93 is more difficult, but the road is complete. I should have started this project by looking for better data. 
 
-Another quick way to get Highway 93 is to use a service like [CalTopo](caltopo.com). There is a really cool feature on this website that allows you draw lines on a map. As the lines are drawn they are snapped to a nearby feature. In this case, Highway 93. I could have done this, then exported the data as a GeoJSON and laoded it into R. 
+Another quick way to get Highway 93 is to use a service like [CalTopo](caltopo.com). There is a really cool feature on this website that allows you to draw lines on a map. As the lines are drawn they are snapped to a nearby feature. In this case, Highway 93. Then export the data as a GeoJSON and load it into R. 
 
-Regardless, I'm proud that I figured out how to complete this problem in R. I often find that people are suprised when I tell them I do all my GIS work in R. I eventually walk back that statement to, all GIS tasks but really detailed cartography is possible in R. And I will stick by this statement for a very long time. R's spatial abilities are only going to improve as packages like `{sf}` improve.
+Regarless, I'm happy that I used R to solve this problem. People are surprised when I tell them I do all my GIS work in R. I eventually concede that R is great for all GIS tasks except detailed cartography. And I will stick by this statement for a very long time. R's spatial abilities are only going to improve as packages like `{sf}` improve.
 
 If you have any thoughts or improvements you can create an [issue on the repo for site](https://github.com/kissmygritts/kissmygritts).
