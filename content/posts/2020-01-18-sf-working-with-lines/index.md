@@ -4,7 +4,7 @@ date: 2020-01-18
 published: true
 tags: ['sf', 'r', 'spatial']
 canonical_url: false
-description: 'A few things to be aware of when plotting geometries with {sf}.'
+description: 'Avoiding ESRI. At all costs!'
 ---
 
 Biologist: "Hey, can you get me all the GNIS data from Lincoln and eastern White Pine County?"
