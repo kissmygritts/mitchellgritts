@@ -16,15 +16,15 @@ export default [
     }
   },
   {
-    path: "/:slug",
-    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/Post.vue"),
+    path: "/tag/:id",
+    component: () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/Tag.vue"),
     meta: {
       data: true
     }
   },
   {
-    path: "/tag/:id",
-    component: () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/Tag.vue"),
+    path: "/:slug",
+    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/Post.vue"),
     meta: {
       data: true
     }
