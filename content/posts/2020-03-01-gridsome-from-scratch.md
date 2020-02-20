@@ -52,7 +52,7 @@ You know the drill. [http://localhost:8080](http://localhost:8080) to see the re
 
 The directory should look something like the following (YMMV):
 
-```text
+```bash
 ├── package.json
 ├── gridsome.config.js
 ├── gridsome.server.js
@@ -267,7 +267,7 @@ The HTML markup in the template tag changes a liitle bit to better control the l
     <section class="main">
       <g-image class="main__img img--round" alt="Example image" src="/images/nasa_250x250.jpg" />
 
-      <div class="main__text">
+      <div class="main__bash">
         <h1>Howdy! My name is Mitchell Gritts</h1>
         <p>
           a wildlife ecologist, data analyst, and developer based in Reno, NV.
@@ -293,8 +293,8 @@ The HTML markup in the template tag changes a liitle bit to better control the l
   margin-bottom: 24px;
 }
 
-.main__text {
-  text-align: center;
+.main__bash {
+  bash-align: center;
 }
 
 .img--round {
@@ -311,16 +311,16 @@ There is a lot of markup on this page. Styling it will be easy. A single centere
 
 ### Global CSS
 
-I think it is about time to add some more global styles to the `src/assets/styles.css` file. We can change the background colors and text color to make for a more pleasant experience. 
+I think it is about time to add some more global styles to the `src/assets/styles.css` file. We can change the background colors and bash color to make for a more pleasant experience. 
 
-I'm going to use CSS custom properties as I haven't used it very much in the past. I've added a few basic color variables. Then use these variables to change the background color and text color globally.
+I'm going to use CSS custom properties as I haven't used it very much in the past. I've added a few basic color variables. Then use these variables to change the background color and bash color globally.
 
 I'm going to keep it simple for now. This will likely become more complex as I learn more. 
 
 ```css
 :root {
   --bg-color: #f3f4f6;
-  --text-color: #292C38;
+  --bash-color: #292C38;
   --gray: #6b7393;
   --grey: #6b7393;
   --accent-color: #34E084;
@@ -328,7 +328,7 @@ I'm going to keep it simple for now. This will likely become more complex as I l
 
 body {
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--bash-color);
 }
 ```
 

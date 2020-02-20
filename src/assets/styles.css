@@ -69,6 +69,8 @@ small, .text-small {
 }
 
 ul, ol {
+  padding-left: 0;
+  list-style-position: outside;
   margin-bottom: 1.15em;
 }
 
@@ -155,27 +157,4 @@ blockquote {
 
 .article__content > img[src*="#splash"] {
   grid-column: full;
-}
-
-@media only screen
-and (min-width: 769px)
-and  (max-width: 1023px) {
-  .article__content > pre {
-    padding: 2em 4em;
-  }
-}
-
-@media only screen
-and (min-width: 1024px)
-and (max-width: 1223px) {
-  .article__content > pre {
-    padding: 2em 12em;
-  }
-}
-
-@media only screen 
-and (min-width: 1224px) {
-  .article__content > pre {
-    padding: 2em 16em;
-  }
 }
