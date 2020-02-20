@@ -1,43 +1,34 @@
 // This is where project configuration and plugin options are located. 
 // Learn more: https://gridsome.org/docs/config
 
-// Changes here requires a server restart.
+// Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'mitchellgritts.com',
-  siteDescription: 'a wildlife ecology, data analysis, and programmer blog',
+  siteName: 'Mitchell Gritts',
+  siteUrl: 'https://mitchellgritts.com',
+
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      plugins: [
+        [ 'gridsome-plugin-remark-shiki', { theme: 'nord', skipInline: true } ]
+      ]
+    }
+  },
 
   plugins: [
     {
-      // Create posts from markdown files
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Post',
-        // path: 'content/posts/*.md',
         path: 'content/posts/**/*.md',
-        route: '/:slug',
-        refs: {
-          // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
-          tags: {
-            typeName: 'Tag',
-            route: '/tag/:id',
-            create: true
-          }
-        }
+        typeName: 'Post'
       }
     }
   ],
 
-  transformers: {
-    //Add markdown support to all file-system sources
-    remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link',
-      plugins: [
-        '@gridsome/remark-prismjs'
-      ]
-    }
-  },
+  templates: {
+    Post: '/:title'
+  }
 }

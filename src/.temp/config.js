@@ -1,7 +1,7 @@
 export default {
-  "siteUrl": "",
-  "siteName": "mitchellgritts.com",
-  "titleTemplate": "%s - mitchellgritts.com",
-  "siteDescription": "a wildlife ecology, data analysis, and programmer blog",
-  "version": "0.6.3"
+  "trailingSlash": true,
+  "pathPrefix": "",
+  "titleTemplate": "%s - Mitchell Gritts",
+  "siteUrl": "https://mitchellgritts.com",
+  "version": "0.7.12"
 }
