@@ -1,84 +1,63 @@
 <template>
-  <div id="app">
-
+  <div class="layout">
+    
     <header class="header">
       <div class="header__left">
-        <Logo v-if="showLogo" /> 
-      </div>
-      
-      <div class="header__right">        
-        <!-- <ToggleTheme /> -->
+        <Logo v-if="showLogo" />
       </div>
     </header>
+    
+    <slot/>
 
-    <main class="main">
-      <slot/>
-    </main>
-
-    <footer class="footer">
-      <span><a href="https://github.com/kissmygritts">GitHub</a> </span> :: uncopyright & unlicense
+    <footer>
+      <p class="text-small text-center">
+        <a href="https://github.com/kissmygritts">GitHub</a> :: everything here is 
+        <a href="https://unlicense.org/">Unlicensed</a>
+      </p>
     </footer>
-
+  
   </div>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+}
+</static-query>
+
 <script>
 import Logo from '~/components/Logo.vue'
-import ToggleTheme from '~/components/ToggleTheme.vue'
 
 export default {
   props: {
     showLogo: { default: true }
   },
   components: {
-    Logo,
-    ToggleTheme
+    Logo
   }
 }
 </script>
 
-<style lang="scss">
+<style>
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: var(--header-height);
-  padding: 0 calc(var(--space) / 2);
-  top:0;
+  min-height: 4em;
+  padding: 0 2em;
+  top: 0;
   z-index: 10;
-
-  &__left,
-  &__right {
-    display: flex;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
-  }
 }
 
-.main {
-  margin: 0 auto;
-  padding: 1.5vw 15px 0;
-}
-
-.footer {
+.header__left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: calc(var(--space) / 2);
-  text-align: center;
-  font-size: .8em;
+}
 
-  > span {
-    margin: 0 .35em;
-  }
-
-  a {
-    color: currentColor;
-  }
+footer {
+  color: var(--gray);
+  margin: 3em auto 1em auto;
 }
 </style>

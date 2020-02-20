@@ -1,130 +1,50 @@
 <template>
-  <Layout>
-    <div class="post-title">
-      <h1 class="post-title__text">
-        {{ $page.post.title }}
-      </h1>
-      
-      <PostMeta :post="$page.post" />
+  <layout>
 
-    </div>
-    
-    <div class="post content-box">
-      <div class="post__header">
-        <g-image alt="Cover image" v-if="$page.post.coverImage" :src="$page.post.coverImage" />
+    <article class="article">
+
+      <div class="article__head">
+        <h1 v-html="$page.post.title" />
+        <p class="article__head--lighter">
+          {{ $page.post.datetime }} 
+          <span class="em-dash">&mdash;</span>
+          {{ $page.post.timeToRead }} min. to read
+        </p>
       </div>
 
-      <div class="post__content" v-html="$page.post.content" />
+      <div class="article__content" v-html="$page.post.content" />
+    </article>
 
-      <div class="post__footer">
-        <PostTags :post="$page.post" />
-      </div>
-    </div>
+  </layout>
 
-    <div class="post-comments">
-      <!-- Add comment widgets here -->
-    </div>
-
-    <!-- <Author class="post-author" /> -->
-  </Layout>
 </template>
 
 <script>
-import PostMeta from '~/components/PostMeta'
-import PostTags from '~/components/PostTags'
-import Author from '~/components/Author.vue'
-
-export default {
-  components: {
-    Author,
-    PostMeta,
-    PostTags
-  },
-  metaInfo () {
-    return {
-      title: this.$page.post.title,
-      meta: [
-        {
-          name: 'description',
-          content: this.$page.post.description
-        }
-      ]
-    }
-  }
-}
 </script>
 
+<style scoped>
+.article {
+  margin: 2em 0 4em 0;
+}
+
+.article__head--lighter {
+  color: var(--gray);
+}
+
+.em-dash {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+</style>
+
 <page-query>
-query Post ($path: String!) {
-  post: post (path: $path) {
+query Post ($path: String) {
+  post (path: $path) {
     title
     path
-    date (format: "D. MMMM YYYY")
-    timeToRead
-    tags {
-      id
-      title
-      path
-    }
-    description
+    datetime: date (format: "MMM. DD, YYYY")
     content
+    timeToRead
   }
 }
 </page-query>
-
-<style lang="scss">
-.post-title {
-  padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
-  text-align: center;
-}
-
-.post {
-
-  &__header {
-    width: calc(100% + var(--space) * 2);
-    margin-left: calc(var(--space) * -1);
-    margin-top: calc(var(--space) * -1);
-    margin-bottom: calc(var(--space) / 2);
-    overflow: hidden;
-    border-radius: var(--radius) var(--radius) 0 0;
-    
-    img {
-      width: 100%;
-    }
-
-    &:empty {
-      display: none;
-    }
-  }
-
-  &__content {
-    h2:first-child {
-      margin-top: 0;
-    }
-
-    // p:first-of-type {
-    //   font-size: 1.2em;
-    //   color: var(--title-color);
-    // }
-
-    img {
-      width: calc(100% + var(--space) * 2);
-      margin-left: calc(var(--space) * -1);
-      display: block;
-      max-width: none;
-    }
-  }
-}
-
-.post-comments {
-  padding: calc(var(--space) / 2);
-  
-  &:empty {
-    display: none;
-  }
-}
-
-.post-author {
-  margin-top: calc(var(--space) / 2);
-}
-</style>
