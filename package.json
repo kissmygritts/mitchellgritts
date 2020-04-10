@@ -1,5 +1,5 @@
 {
-  "name": "gridsome-from-scratch",
+  "name": "mitchell-gritts-website",
   "private": true,
   "scripts": {
     "build": "gridsome build",
