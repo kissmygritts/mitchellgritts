@@ -1,8 +1,8 @@
 ---
 title: "Fun with Functions in R, pt. 1"
 date: 2020-04-22
-published: false
-tags: ["r", "programming"]
+published: true
+tags: ["r", "programming", "functions"]
 canonical_url: false
 description: "Functions are fundamental building block in R."
 ---
@@ -161,7 +161,7 @@ All that to say big, long workflows can be broken into smaller, easier to reason
 
 ### I lied, one more thing
 
-I'm passionate about functions. It's a strange thing to be passionate about. But hey! who cares? I suppose it is due to my desire for clean, simple code. Perhaps even minimal code. Computer programming is hard enough, why make it harder. Functions are my attempts to reconcile the difficulty of programming with my desire for minimal programs.
+I'm passionate about functions. It's a strange thing to be passionate about. But hey! Who cares? I suppose it is due to my desire for clean, simple code. Perhaps even minimal code. Computer programming is hard enough, why make it harder. Functions are my attempts to reconcile the difficulty of programming with my desire for minimal programs.
 
 I think.
 
