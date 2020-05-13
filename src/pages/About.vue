@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main>
+    <main class="article__content">
       <h1>About the Site</h1>
       <p>
         Right now, this very instant, someone is struggling with code. I know because
@@ -46,8 +46,6 @@ export default {
 
 <style scoped>
 main {
-  max-width: 40rem;
-  margin: 2em auto 4em auto;
-  padding: 0 1em;
+  margin: 2em 0 4em 0;
 }
 </style>
