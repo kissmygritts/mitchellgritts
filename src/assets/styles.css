@@ -122,6 +122,10 @@ a:hover {
 blockquote {
   quotes: initial;
   color: var(--gray);
+  border-left: var(--main-green) 4px solid;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  margin-left: 1em;
 }
 
 /* STYLE MARKDOWN */
