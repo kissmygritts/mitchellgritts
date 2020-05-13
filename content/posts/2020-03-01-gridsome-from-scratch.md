@@ -1,24 +1,24 @@
 ---
-title: 'Gridsome from Scratch'
+title: "Gridsome from Scratch"
 date: 2020-03-01
 published: false
-tags: ['jamstack', 'web', 'vue', 'gridsome']
+tags: ["jamstack", "web", "vue", "gridsome"]
 canonical_url: false
-description: 'Get up and running with gridsome from scratch'
+description: "Get up and running with gridsome from scratch"
 ---
 
-[Gridsome](https://gridsome.org) is a static framework built ontop of Vue.js. It uses GraphQL as the data layer. Because of that, it is easy to think of it as Gatsby for Vue. If you want the full rundown check their website. 
+[Gridsome](https://gridsome.org) is a static framework built ontop of Vue.js. It uses GraphQL as the data layer. Because of that, it is easy to think of it as Gatsby for Vue. If you want the full rundown check their website.
 
 **TLDR: It's pretty easy to get started. Especially if you've been looking for a Vue based Gatsby alternative.**
 
 ### Why Gridsome?
 
-* Vue.js
-* GraphQL
-* Static site generator
-* fast by default
+- Vue.js
+- GraphQL
+- Static site generator
+- fast by default
 
-I use switched to Gridsome for my own site in June or July 2019. I was using Gatsby, but didn't know React, which made developing things difficult. Once I heard about Gridsome I decided to check it out. Especially since I was doing a lot of Vue development at the time.
+I switched to Gridsome for my own site in June or July 2019. I was using Gatsby, but didn't know React, which made developing things difficult. Once I heard about Gridsome I decided to check it out. Especially since I was doing a lot of Vue development at the time.
 
 [v0.7 of Gridsome](https://gridsome.org/blog/2019/09/17/gridsome-v07/) was released shortly after I began using Gridsome. The latest release includes many features I had been searching for, but I kept putting off upgrading. Until now.
 
@@ -30,7 +30,7 @@ I think the Gridsome documentation is good. Listen, I've been spoiled by Vue's d
 
 ### Installation
 
-The installation and getting started portions are enough to get started. I highly recommend following along with their docs to install, and get the ball rolling. 
+The installation and getting started portions are enough to get started. I highly recommend following along with their docs to install, and get the ball rolling.
 
 Below is a quick rundown of installation and kicking of a Gridsome project.
 
@@ -46,7 +46,7 @@ cd gridsome-from-scratch
 gridsome develop
 ```
 
-You know the drill. [http://localhost:8080](http://localhost:8080) to see the results. Yeah, Gridsome prints all those details to the terminal too. Be sure to check the [http://localhost:8080/___explore](http://localhost:8080/___explore) page as well, it's a GraphQL playground to explore your sites data.
+You know the drill. [http://localhost:8080](http://localhost:8080) to see the results. Yeah, Gridsome prints all those details to the terminal too. Be sure to check the [http://localhost:8080/\_\_\_explore](http://localhost:8080/___explore) page as well, it's a GraphQL playground to explore your sites data.
 
 ### Directory structure
 
@@ -72,11 +72,11 @@ The directory should look something like the following (YMMV):
 
 Important files and folders to know about.
 
-* __gridsome.config.js__ &mdash; configuration options for Gridsome
-* __src/main.js__ &mdash; entry JS file for Gridsome. Scripts and styles imported here are available globally? Maybe, not 100% on that yet.
-* __src/layouts/__ &mdash; page and application layouts go here.
-* __src/pages/__ &mdash; everything in here becomes a page on your website. `src/pages/index.vue` will become `localhost:8080/`, the home page. `src/pages/about.vue` becomes `localhost:8080/about/`, etc.
-* __src/templates/__ &mdash; transform data sources into templates located in this folder. Def need more time understanding how this works.
+- **gridsome.config.js** &mdash; configuration options for Gridsome
+- **src/main.js** &mdash; entry JS file for Gridsome. Scripts and styles imported here are available globally? Maybe, not 100% on that yet.
+- **src/layouts/** &mdash; page and application layouts go here.
+- **src/pages/** &mdash; everything in here becomes a page on your website. `src/pages/index.vue` will become `localhost:8080/`, the home page. `src/pages/about.vue` becomes `localhost:8080/about/`, etc.
+- **src/templates/** &mdash; transform data sources into templates located in this folder. Def need more time understanding how this works.
 
 ### Configuration
 
@@ -85,19 +85,19 @@ There isn't too much to do here right now. Change the `siteName` prop. Add a `si
 ```js
 // gridsome.config.js
 module.exports = {
-  siteName: 'Mitchell Gritts\' website',
-  siteDescription: 'A personal website and blog for Mitchell Gritts',
-  plugins: []
-}
+  siteName: "Mitchell Gritts' website",
+  siteDescription: "A personal website and blog for Mitchell Gritts",
+  plugins: [],
+};
 ```
 
 If you restart the `gridsome develop` process you'll see the site name changes.
 
-Later in this post I'll go into more detail on plugins. 
+Later in this post I'll go into more detail on plugins.
 
 ## Reset all the things!
 
-Keep it simple. Remember that as I begin. Let's start with a black canvas &mdash; *tabula rasa*.
+Keep it simple. Remember that as I begin. Let's start with a black canvas &mdash; _tabula rasa_.
 
 I guess while I'm at it I can add relevent markup to the pages I am resetting. So be prepared for that too. Again, it'll be simple.
 
@@ -134,9 +134,9 @@ export default {
 
 No major changes here:
 
-* Deleted Gridsome links and associated styles.
-* Chagned the image to [this one](https://github.com/kissmygritts/beginning-gridsome/blob/master/01-the-reset/static/images/nasa_250x250.jpg) from [NASA](https://mars.nasa.gov/multimedia/resources/mars-posters-explorers-wanted/).
-* Altered some of the markup to personalize it. Yes, I do say howdy in real life. No, I'm not from Texas.
+- Deleted Gridsome links and associated styles.
+- Chagned the image to [this one](https://github.com/kissmygritts/beginning-gridsome/blob/master/01-the-reset/static/images/nasa_250x250.jpg) from [NASA](https://mars.nasa.gov/multimedia/resources/mars-posters-explorers-wanted/).
+- Altered some of the markup to personalize it. Yes, I do say howdy in real life. No, I'm not from Texas.
 
 Take a look at [the diff on GitHub](https://github.com/kissmygritts/beginning-gridsome/commit/0d6d25c15feae9dcce0cc1856b326b3e14dd76cb).
 
@@ -163,7 +163,7 @@ Yeah, I deleted everything. And I'm okay with that for right now. All those desi
 
 ### The about page
 
-The about page can still be accessed even though there isn't a direct link anymore. Point your browser to `localhost:8080/about/`. Yup! pretty ugly right now. And nothing to delete this time. 
+The about page can still be accessed even though there isn't a direct link anymore. Point your browser to `localhost:8080/about/`. Yup! pretty ugly right now. And nothing to delete this time.
 
 I'm going to add a little bit of information about me. Why I like maintaining a website. And why I think it is important to learn in the open.
 
@@ -177,7 +177,7 @@ I'm going to add a little bit of information about me. Why I like maintaining a 
 
     <p>
       While attending college I taught myself how to program with R. I've been hooked
-      ever since then. I continued learning about programing as time allowed. I've 
+      ever since then. I continued learning about programing as time allowed. I've
       since taught myself web development. Fun stuff.
     </p>
 
@@ -203,7 +203,7 @@ There wasn't enough variety in the markup I added so I included some lorem ipsum
 
 Getting there, but the CSS should be reset a bit in order to start from the scratch. This [post from alligator.io](https://alligator.io/css/minimal-css-reset/) provides a minimal CSS reset. The idea is that most browsers are pretty uniform with the base layouts, so there isn't a need for a complicated reset.
 
-First, create a new folder `src/assets`. Then create a styles file, `src/assets/styles.css`. 
+First, create a new folder `src/assets`. Then create a styles file, `src/assets/styles.css`.
 
 ```css
 /* src/assets/styles.css */
@@ -212,17 +212,29 @@ html {
   font-size: 16px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 ```
@@ -231,14 +243,14 @@ In order to use this file on the site import it within the `src/main.js` file.
 
 ```js
 // src/main.js
-import('~assets/styles.css')
+import("~assets/styles.css");
 
 // ... remaining content in the file
 ```
 
 Simple as that. Of course, there are many ways to deal with CSS and styles. Any number of CSS post-processors can be used. That might be better addressed in a future post. If you insist, check [the documentation](https://gridsome.org/docs/assets-css/#use-sass--css-pre-processors).
 
-All the progress up to this point can be found in [this GitHub repo](https://github.com/kissmygritts/beginning-gridsome/tree/master/01-the-reset). I've broken it into separate folders for each section as I progress. I figure it'll be nice to revisit as necessary. 
+All the progress up to this point can be found in [this GitHub repo](https://github.com/kissmygritts/beginning-gridsome/tree/master/01-the-reset). I've broken it into separate folders for each section as I progress. I figure it'll be nice to revisit as necessary.
 
 <!-- END: 01-the-reset  -->
 
@@ -250,7 +262,7 @@ I've started a new folder in the [GitHub repo](https://github.com/kissmygritts/b
 
 ### What about a CSS framework
 
-Full disclosure, I struggle with CSS. I never took the time to fully learn the nuances of the language. So no. No CSS frameworks. Especially for something as simple as this. Even though I do *love* tailwindcss. Adam Wathan, congrats. You've built a beautiful framework.
+Full disclosure, I struggle with CSS. I never took the time to fully learn the nuances of the language. So no. No CSS frameworks. Especially for something as simple as this. Even though I do _love_ tailwindcss. Adam Wathan, congrats. You've built a beautiful framework.
 
 Also, CSS Grid is dope! And I want to figure it all out. I'm sure there will be a use for it on this site at some point.
 
@@ -311,19 +323,19 @@ There is a lot of markup on this page. Styling it will be easy. A single centere
 
 ### Global CSS
 
-I think it is about time to add some more global styles to the `src/assets/styles.css` file. We can change the background colors and bash color to make for a more pleasant experience. 
+I think it is about time to add some more global styles to the `src/assets/styles.css` file. We can change the background colors and bash color to make for a more pleasant experience.
 
 I'm going to use CSS custom properties as I haven't used it very much in the past. I've added a few basic color variables. Then use these variables to change the background color and bash color globally.
 
-I'm going to keep it simple for now. This will likely become more complex as I learn more. 
+I'm going to keep it simple for now. This will likely become more complex as I learn more.
 
 ```css
 :root {
   --bg-color: #f3f4f6;
-  --bash-color: #292C38;
+  --bash-color: #292c38;
   --gray: #6b7393;
   --grey: #6b7393;
-  --accent-color: #34E084;
+  --accent-color: #34e084;
 }
 
 body {
@@ -340,7 +352,7 @@ My favorite resource for typography is [Better Web Type](https://betterwebtype.c
 
 ### Fonts
 
-I'm not an expert when it comes to picking or combining fonts. I know what I like when I see it. I decided to use libre Baskerville for paragraph tags, and libre Franklin for headings. I'm going to see how a Major Third scale works on the about page. 
+I'm not an expert when it comes to picking or combining fonts. I know what I like when I see it. I decided to use libre Baskerville for paragraph tags, and libre Franklin for headings. I'm going to see how a Major Third scale works on the about page.
 
 Now for a bit of decision making. I can push [fonts into the head](https://gridsome.org/docs/assets-fonts/#using-cdn-fonts-typekit-google-fonts-etc). Easy. It is possible, however, to self host the font. I'll do that to see what all of the [fuss is about](https://gridsome.org/docs/assets-fonts/#self-hosting-open-source-typefaces). This way I can install the fonts with `npm`.
 
@@ -352,8 +364,8 @@ then `require` them in the root `index.js` file ([GitHub diff](https://github.co
 
 ```javascript
 // src/main..js
-require('typeface-libre-baskerville')
-require('typeface-libre-franklin')
+require("typeface-libre-baskerville");
+require("typeface-libre-franklin");
 
 // remainder of file...
 ```
@@ -366,16 +378,20 @@ Finally, add the font families to the `src/assets/styles.css` file!
 
 /* TYPOGRAPHY */
 body {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Libre Franklin', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Libre Franklin", sans-serif;
 }
 ```
 
 Coool! Things changed. I'm going to go ahead and add all the additional CSS from type-scale.com. Check the [GitHub diff](https://github.com/kissmygritts/beginning-gridsome/commit/79325e6d295bc8260ee1ade2604d6c0019de708b?diff=unified) for all the changes.
 
-*Note that I've made changes to a few other files as well. I changed the width of the about me content to ems instead of pixels. And added styles for anchor tags.*
+_Note that I've made changes to a few other files as well. I changed the width of the about me content to ems instead of pixels. And added styles for anchor tags._
 
 That is the final bit of work I will do for the portion of the site. [Check the 02-main-styles](https://github.com/kissmygritts/beginning-gridsome/tree/master/02-main-styles) for a complete look at the project so far.
