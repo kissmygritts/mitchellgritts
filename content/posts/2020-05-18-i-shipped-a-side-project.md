@@ -51,3 +51,5 @@ There are a few features that I have planned for this website.
 1. Embed runable R code examples, maybe? Seems like a good idea.
 1. Dark mode!
 1. Moar content!
+
+Please contribute if you have an additional thoughts, feedback, content suggestions.

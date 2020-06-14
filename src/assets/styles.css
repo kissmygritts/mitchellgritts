@@ -42,6 +42,8 @@ body {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   line-height: 1.65;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
