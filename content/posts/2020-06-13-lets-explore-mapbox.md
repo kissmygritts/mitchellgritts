@@ -13,6 +13,8 @@ I decided to start exploring Mapbox GL JS (I'm going to call it mapgoxgl from no
 
 My knowledge of mapboxgl isn't as good as Leaflet. So I decided to get a hang of the library and build some cool stuff!
 
+*Note: this post is a stream of conciousness dump as I figure out some GIS stuff for the web, and a little vanilla JS along the way. Expect random updates.*
+
 ## Create a super simple sandbox
 
 Let's create a sandbox to further explore the features of mapboxgl. [Clone this repo](https://github.com/kissmygritts/mapboxgl-sandbox) to get started. Then `cd` into the directory, run `npm install` (or yarn) the packages. Finally, `npm run start` to start the dev server.
@@ -194,11 +196,111 @@ Another feature of web maps is the ability to toggle layers on and off. This is 
 
 I suppose the biggest pain is trying to do this with vanilla JavaScript. I'll admit I'm one of those people that jumped straight into a framework without a great understanding of vanilla JavaScript. Or, at least not working with the DOM. My JavaScript knowledge came from working with Node building a few APIs. 
 
+## Serve Mapbox Vector Tiles from PostGIS
+
+Tobin Bradley (twitter) created an awesome spatial websever that interfaces with a PostGIS database, [dirt-simple-postgis-http-api](https://github.com/tobinbradley/dirt-simple-postgis-http-api). Its simplicity is beautiful. It's built with Fastify, the responses are gzipped. It is really fast! And it serves mapbox vector tiles. 
+
+I've cloned the repo and connected it to a PostGIS enabled PostgreSQL database called `spatial-data`. I've loaded [these geopackages](https://github.com/kissmygritts/mapboxgl-sandbox/tree/master/data) into the database with the `ogr2ogr` command. 
+
+```bash
+# example usage
+ogr2ogr -f PostgreSQL PG:dbname=<database name> <input file>
+
+# a real example
+ogr2ogr -f PostgreSQL PG:dbname=spatial-data nv-counties.gpkg
+```
+
+*Note: I'm working on a Mac and installed postgres, postgis, gdal, geos, proj, etc. with homebrew. The OSGEO fols maintain a homebrew repo for development versions of all these packages. I installed all mine with `brew install <formula>`. If you're working on a Windows, I'm so sorry. I have very litte experience installing things like this on Windows. Maybe try using the Windows Subsytem for Linus.*
+
+Playing with PostGIS is a lot of fun. If you're ever curious about a function google the name of that function. Odds are you'll end up at the documentation for that function.
+
+Anyway, once you have some data in the database, connect the the `dirt-simple-postgis-http-api` to the database by changing the connection details in the `./config/index.json` file to match your database details. Then, `npm run start` will get the server up and running. Navigate to [http://localhost:4000](http://localhost:4000) to get a Swagger UI documentation site for the API (this is a super cool feature, thanks for including this Tobin). You'll see all the routes available for the API, as well as parameters and query string details for each route. For now, we are most interested in `v1/mvt/...`, and `v1/list_layers`. The former will return Mapbox Vector Tiles straight from the database! Plug these directly into the `map.addSource` function call to display them on a map.
+
+## Dynamic layer toggles
+
+Now, we can fetch all the layers from the database and add a dynamic layer toggle list to the application. I'm pretty new to building vanilla JS projects. Like I said earlier. I have a basic knowledge of server side JS; front-end JS skills ellude me.
+
+I created a function to fetch the all the layers from the API at `js/api.js`. See the function below.
+
+```js
+export async function getLayers () {
+  const res = await fetch('http://localhost:4000/v1/list_layers')
+  return res.json()
+}
+```
+
+Pretty simple for now. It might be a good idea to include the API URL in the `.env` file so it can be overwritten if need with environmental variables when deploying to production. Just a thought. 
+
+Now, a function to create a dynamic list of the layers in the database at `js/layer-toggles.js`
+
+```js
+import { getLayers } from './api'
+
+export async function createLayerToggles (map) {
+  const layers = await getLayers()
+  const parent = document.getElementById('layer-toggles')
+
+  // loop over each layer and create inputs
+  layers.forEach(layer => {
+    const layerName = layer.f_table_name
+
+    // create child elements
+    const toggle = document.createElement('li')
+    
+    // create label
+    const label = document.createElement('label')
+    label.setAttribute('for', layerName)
+    label.innerHTML = layerName.split('_').join(' ')
+    label.style = 'text-transform: capitalize;'
+
+    // create input
+    const input = document.createElement('input')
+    input.setAttribute('id', layerName)
+    input.setAttribute('type', 'checkbox')
+    input.setAttribute('name', 'layertoggle')
+    input.setAttribute('value', layerName)
+
+    // add event
+    input.onclick = function (e) {
+      const checked = this.checked
+
+      if (checked) {
+        map.setLayoutProperty(layerName, 'visibility', 'visible')
+      } else {
+        map.setLayoutProperty(layerName, 'visibility', 'none')
+      }
+    }
+
+    toggle.append(input)
+    toggle.append(label)
+    parent.append(toggle)
+  })
+}
+```
+
+This all looks quite complicated! It took me awhile to reason about it too. Here is a breakdown of all the steps.
+
+1. first fetch the list of layers from the database
+2. Loop over each layer in the list
+  1. create a toggle `<li>` element
+  2. create a checkbox `<input>` element
+  3. create a `<label>` for the checkbox
+  4. set the appropriate attributes to each of these elements we've created.
+  5. add an onclick event to each input that will toggle the visibility of the layer
+  6. append the input and label to the toggle
+  7. then append the toggle to the parent element
+
+[Check the repo](https://github.com/kissmygritts/mapboxgl-sandbox/tree/dynamic-toggles) for a complete picture of the setup for this project. With a little luck you should get an app that looks a little like this:
+
+![mapbox map with dynamic layer toggles](/images/mapbox-dynamic-toggles.png)
+
+Yeah, it's pretty ugly right now! I'm working on rounding out some of the functionality before I get too carried away with styling the dang thin.
+
 ## Wrap up
 
 A few more interesting feature ideas to work on
 
-* Turn multiple layers on and off
+* ~~Turn multiple layers on and off~~: updated 2020-06-22
 * Alter the opacity of layers when there are many layers loaded
 * Style points based on attribute data
 * Draw on the map
