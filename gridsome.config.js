@@ -30,14 +30,21 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
+        typeName: 'DigitalGarden',
         path: 'content/digital-garden/*.md',
-        typeName: 'DigitalGarden'
+        refs: {
+          topic: {
+            typeName: 'Topic',
+            create: true
+          }
+        }
       }
     }
   ],
 
   templates: {
     Post: '/:title',
-    DigitalGarden: '/digital-garden/:title'
+    DigitalGarden: '/digital-garden/:title',
+    Topic: '/topics/:id'
   }
 }

@@ -1,5 +1,13 @@
 export default [
   {
+    path: "/digital-garden/:title/",
+    component: () => import(/* webpackChunkName: "page--src--templates--digital-garden-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/DigitalGarden.vue")
+  },
+  {
+    path: "/digital-garden/",
+    component: () => import(/* webpackChunkName: "page--src--pages--digital-garden-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/pages/DigitalGarden.vue")
+  },
+  {
     path: "/about/",
     component: () => import(/* webpackChunkName: "page--src--pages--about-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/pages/About.vue")
   },

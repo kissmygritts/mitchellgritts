@@ -2,8 +2,8 @@
 title: "Vue renderless components"
 date: 2020-06-27
 published: true
-category: 'vue'
-tags: ["web development", "vue"]
+topic: 'vue'
+stage: 'seeling'
 ---
 
 Renderless components are used to encapsulate the interactions and state while leaving the styling up to the user. 
