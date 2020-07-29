@@ -1,7 +1,8 @@
 ---
-title: 'Plot {sf} Objects'
+title: '{sf} - Plotting Spatial Objects'
 date: 2020-01-14
 published: true
+category: R spatial
 tags: ['sf', 'r', 'spatial']
 canonical_url: false
 description: 'A few things to be aware of when plotting geometries with {sf}.'

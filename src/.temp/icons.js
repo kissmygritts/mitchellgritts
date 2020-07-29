@@ -6,7 +6,7 @@ export default {
   "favicons": [
     {
       "width": 16,
-      "src": "/assets/static/src/favicon.png?width=16&key=5181b52"
+      "src": "/assets/static/favicon.ce0531f.b45629473753f863be107fadb1054d5f.png"
     }
   ]
 }

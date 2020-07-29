@@ -2,6 +2,7 @@
 title: Web Mapping, Part 1 - GeoJSON
 date: 2019-06-17
 published: true
+category: web maps
 tags: ['gis', 'leaflet', 'maps']
 canonical_url: true
 description: 'How to serve and render spatial polygons on the web.'

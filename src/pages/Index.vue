@@ -12,9 +12,26 @@
     </section>
 
     <section class="post-list">
-      <h2>Posts</h2>
+      <h2>Recent Posts</h2>
       <post-list class=""
-                 :posts="$page.posts.edges" />
+                 :posts="$page.recentPosts.edges" />
+    </section>
+
+    <section class="post-list pad-top">
+      <h2>Posts by Category</h2>
+      <div
+        v-for="category in $page.postByCategories.edges"
+        :key="category.node.id"
+      >
+        <h3
+          class="capitalize h4"
+        >
+          {{ category.node.title }}
+        </h3>
+        <post-list
+          :posts="category.node.belongsTo.edges"
+        />
+      </div>
     </section>
 
   </Layout>
@@ -67,6 +84,14 @@ export default {
   padding: 0 1em;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
+.pad-top {
+  padding-top: 3em;
+}
+
 footer {
   color: var(--gray);
   margin: 4em auto 1em auto;
@@ -75,7 +100,10 @@ footer {
 
 <page-query>
 query {
-  posts: allPost {
+  recentPosts: allPost (
+    sortBy: "date"
+    limit: 5
+  ) {
     edges {
       node {
         id
@@ -83,6 +111,29 @@ query {
         datetime: date (format: "YYYY-MM-DD")
         description
         path
+      }
+    }
+  }
+  
+  postByCategories: allCategory (
+    sortBy: "title"
+  ) {
+    edges {
+      node {
+        id
+        title
+        belongsTo {
+          edges {
+            node {
+              ...on Post {
+                id
+                path
+                title
+                datetime: date (format: "YYYY-MM-DD")
+              }
+            }
+          }
+        }
       }
     }
   }

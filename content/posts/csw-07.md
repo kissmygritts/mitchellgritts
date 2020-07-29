@@ -2,6 +2,7 @@
 title: Simple, Correct, Fast
 date: 2019-10-22
 published: true
+category: R programming
 tags: ['cs weekly', 'programming', 'r']
 canonical_url: false
 description: 'Weekly computer science inspired tips for Instagram, #7'

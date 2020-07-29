@@ -1,7 +1,8 @@
 ---
 title: "Gridsome from Scratch"
 date: 2020-03-01
-published: false
+published: true
+category: WIP
 tags: ["jamstack", "web", "vue", "gridsome"]
 canonical_url: false
 description: "Get up and running with gridsome from scratch"

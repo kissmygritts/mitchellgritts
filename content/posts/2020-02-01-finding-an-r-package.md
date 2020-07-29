@@ -2,6 +2,7 @@
 title: 'How I find an R package'
 date: 2020-02-01
 published: true
+category: R
 tags: ['r', 'programming']
 canonical_url: false
 description: 'How I find an R package, and encapsulate functions'

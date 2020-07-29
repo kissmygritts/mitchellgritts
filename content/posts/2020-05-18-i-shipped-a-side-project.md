@@ -2,7 +2,8 @@
 title: "I shipped a side project over the weekend"
 date: 2020-05-18
 published: true
-tags: ["wev development"]
+category: projects
+tags: [web development, r, nuxt, vue]
 canonical_url: false
 description: "Over the past weekend I shipped a side project!"
 ---

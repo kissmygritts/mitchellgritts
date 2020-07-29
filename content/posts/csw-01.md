@@ -2,6 +2,7 @@
 title: Visualize Color Palettes in R
 date: 2019-06-07
 published: true
+category: data visualization
 tags: ['cs friday', 'r', 'visualization']
 canonical_url: true
 description: 'Visualize your color palettes in R'

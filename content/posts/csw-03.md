@@ -2,6 +2,7 @@
 title: Format SQL Output as JSON
 date: 2019-09-06
 published: true
+category: SQL
 tags: ['cs friday', 'sql']
 canonical_url: false
 description: 'Weekly computer science inspired tips for Instagram, #3'

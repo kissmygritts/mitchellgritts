@@ -2,6 +2,7 @@
 title: Web Mapping, Intro
 date: 2019-06-14
 published: true
+category: web maps
 tags: ['gis', 'leaflet', 'maps']
 canonical_url: true
 description: 'An introduction to web mapping'

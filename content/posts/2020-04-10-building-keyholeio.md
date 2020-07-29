@@ -2,6 +2,7 @@
 title: 'Building an R package to load kml files'
 date: 2020-04-09
 published: true
+category: R spatial
 tags: ['r', 'programming', 'spatial', 'sf', 'packages']
 canonical_url: false
 description: 'In the last post we built a function to read kmls and kmzs into R. Now lets encapsulate that functionality into an R package'

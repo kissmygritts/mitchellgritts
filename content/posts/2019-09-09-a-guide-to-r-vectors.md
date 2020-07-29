@@ -2,6 +2,7 @@
 title: 'A Guide to Vectors in R'
 date: 2019-09-09
 published: true
+category: R programming
 tags: ['r', 'programming']
 canonical_url: false
 description: 'A complete guide to vectors in R'

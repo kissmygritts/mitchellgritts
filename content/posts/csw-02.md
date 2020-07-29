@@ -2,6 +2,7 @@
 title: A Short Introduction to SQL
 date: 2019-08-30
 published: true
+category: SQL
 tags: ['cs friday', 'sql']
 canonical_url: false
 description: 'Weekly computer science inspired tips for Instagram'

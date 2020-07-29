@@ -2,6 +2,7 @@
 title: Interactive Maps in R with the {leaflet} Package
 date: 2019-10-18
 published: true
+category: R spatial
 tags: ['cs friday', 'r', 'spatial', 'leaflet']
 canonical_url: false
 description: 'Weekly computer science inspired tips for Instagram, #6'

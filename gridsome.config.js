@@ -22,8 +22,14 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
+        typeName: 'Post',
         path: 'content/posts/**/*.md',
-        typeName: 'Post'
+        refs: {
+          category: {
+            typeName: 'Category',
+            create: true
+          }
+        }
       }
     },
     // creating a second source for a ./content/digital-garden
@@ -43,7 +49,7 @@ module.exports = {
   ],
 
   templates: {
-    Post: '/:title',
+    Post: '/posts/:title',
     DigitalGarden: '/digital-garden/:title',
     Topic: '/topics/:id'
   }

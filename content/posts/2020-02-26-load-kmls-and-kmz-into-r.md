@@ -2,6 +2,7 @@
 title: 'Load kml and kmz Files into R'
 date: 2020-02-26
 published: true
+category: R spatial
 tags: ['r', 'programming', 'spatial', 'sf']
 canonical_url: false
 description: 'Loading kml files into are is as easy as `sf::read_sf`, until it isnt. Here are few things to pay attention to.'

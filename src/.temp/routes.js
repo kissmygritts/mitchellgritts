@@ -1,5 +1,9 @@
 export default [
   {
+    path: "/posts/:title/",
+    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/Post.vue")
+  },
+  {
     path: "/digital-garden/:title/",
     component: () => import(/* webpackChunkName: "page--src--templates--digital-garden-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/DigitalGarden.vue")
   },
@@ -15,10 +19,6 @@ export default [
     name: "404",
     path: "/404/",
     component: () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/node_modules/gridsome/app/pages/404.vue")
-  },
-  {
-    path: "/:title/",
-    component: () => import(/* webpackChunkName: "page--src--templates--post-vue" */ "/Users/mitchellgritts/Documents/projects/web/blog.mitchellgritts.com/src/templates/Post.vue")
   },
   {
     name: "home",

@@ -2,6 +2,7 @@
 title: Comparing {sf} and {sp} for Spatial Data in R
 date: 2019-10-04
 published: true
+category: R spatial
 tags: ['cs friday', 'r', 'spatial', 'sf', 'sp']
 canonical_url: false
 description: 'Weekly computer science inspired tips for Instagram, #4'

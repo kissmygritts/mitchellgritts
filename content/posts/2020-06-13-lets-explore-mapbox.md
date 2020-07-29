@@ -2,6 +2,7 @@
 title: "Let's explore Mapbox GL JS"
 date: 2020-06-13
 published: true
+category: web maps
 tags: ["web development", "spatial", "gis", "mapbox"]
 canonical_url: false
 description: "Mapbox GL JS is an awesome web mapping framework that uses WebGL under the hood."

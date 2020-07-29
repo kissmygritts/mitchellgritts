@@ -2,6 +2,7 @@
 title: How I Update R
 date: 2019-05-31
 published: true
+category: R
 tags: ['cs weekly', 'r']
 canonical_url: false
 description: 'Steps to update to the newest versions of R and RStudio'

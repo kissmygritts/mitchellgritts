@@ -2,6 +2,7 @@
 title: "Fun with Functions in R, pt. 2 - The Fundementals"
 date: 2020-04-25
 published: true
+category: R programming
 tags: ["r", "programming", "functions"]
 canonical_url: false
 description: "Functions are fundamental building block in R."

@@ -29,8 +29,9 @@ export default {
 <style scoped>
 .post-link {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 1em;
+  flex-direction: column-reverse;
+  margin-bottom: .5em;
+  align-items: baseline;
 }
 
 .date {

@@ -1,7 +1,8 @@
 ---
-title: '{sf} - Working With Lines'
+title: '{sf} - Working with Lines'
 date: 2020-01-18
 published: true
+category: R spatial
 tags: ['sf', 'r', 'spatial']
 canonical_url: false
 description: 'Avoiding ESRI. At all costs!'

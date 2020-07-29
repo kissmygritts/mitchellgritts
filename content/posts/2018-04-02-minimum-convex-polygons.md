@@ -2,6 +2,7 @@
 title: Minimum Convex Polygons
 date: 2018-04-02
 published: true
+category: movement ecology
 tags: ['r', 'movement ecology']
 canonical_url: false
 description: 'Calculating minimum convex polygons'
