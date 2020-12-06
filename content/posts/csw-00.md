@@ -33,7 +33,7 @@ save(pkgs, file = 'installed_packages.RData')
 After running the above snippet of code I'll exit R Studio and install the [newest version of R](https://cran.r-project.org/). Once R is installed run the following line of code to install all of your packages.
 
 ```r
-load(‘installed_packages.RData’)
+load('installed_packages.RData')
 install.packages(pkgs)
 ```
 
